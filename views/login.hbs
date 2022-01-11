@@ -1,0 +1,25 @@
+
+<div class="d-flex justify-content-center" id="form-div">
+  <h2 class="text-center">Log In</h2>
+  <hr>
+  <form method="post" action="/login">
+    <div class="form-group">
+      <label for="email">UserName: </label>
+      <input type="text" class="form-control" id="userName" name="userName">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="password" name="password">
+      
+    </div>
+    {{#if errorMessage}}
+        <div id="error">
+        <p class="text-danger">{{errorMessage}}</p>
+        </div>
+      {{/if}}
+    <div id="btn-div">
+      <input type="submit" class="btn btn-default" value="Login">
+      <a  href="/signUp" class="btn btn-default">sign Up</a>
+    </div>
+  </form>
+</div>

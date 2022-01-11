@@ -1,0 +1,55 @@
+<div>
+    <h2 class="text-center">Tasks</h2>
+    <div class="row" id="task-row">
+      {{#each data}}
+        {{!-- {{#if TaskName}} --}}
+          <div class="task">
+            <div class="task-details">
+              <h3 style="margin-top: 0;">{{taskName}}</h3>
+              <h6>{{initTime}}-{{endTime}}</h6>
+            </div>
+            <a href="/deleteTask/{{taskName}}">delete</a>
+          </div>
+        {{!-- {{/if}} --}}
+      {{else}}
+        <h5 class="h5 text-center">There's no pending task in your list</h5>
+      {{/each}}
+    </div>
+    <button type="button" class="btn btn-primary" id="btn" data-toggle="modal" data-target="#exampleModalCenter">
+      Add Task
+    </button>
+</div>
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle">Add Task</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/addTask">
+            <div class="form-row">
+                <label for="taskName">Task-Name: </label>
+                <input type="text" class="form-control" id="taskName" name="TaskName" required>    
+            </div>
+            <div class="form-row">
+              <label for="initTime">Start-Time: </label>
+              <input type="time" class="form-control" id="initTime" name="InitTime" required>
+              <label for="endTime">End-Time: </label>
+              <input type="time" class="form-control" id="endTime" name="EndTime" required>
+              
+            </div>
+            <input type="submit" class="btn btn-success pull-right" value="Add" />
+        </form>
+      </div>
+       <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>

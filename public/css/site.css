@@ -1,0 +1,59 @@
+body {
+  width: 100%;
+}
+.task {
+  border: 1px solid black;
+  margin: 10px auto;
+  margin-bottom: 30px;
+  width: 80%;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 4%;
+  height: 100px;
+  background-color: #aee6fb;
+}
+
+#btn {
+  margin-left: 10%;
+}
+#form-div {
+  width: 350px;
+  margin: 0 auto;
+  line-height: 80px;
+  border: 2px solid blue;
+  padding-left: 10px;
+  margin-top: 90px;
+}
+#btn-div {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  padding: 37px 10px 20px 10px;
+  border-top: 1px solid black;
+}
+#userName,
+#password,
+#password2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 315px;
+  border-radius: 20px;
+  height: 50px;
+  /* border-bottom: 2px solid black; */
+}
+#form-div .form-group {
+  line-height: 2;
+  font-size: 15px;
+  font-weight: bold;
+}
+#error {
+  height: 1px;
+  margin-bottom: 45px;
+}
+#nav {
+  height: 100px;
+  background-color: #1d4363;
+}
