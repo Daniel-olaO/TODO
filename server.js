@@ -84,7 +84,6 @@ app.get('/task/:userName', ensureLogin, (req,res)=>{
     USERNAME = req.params.userName;
     taskService.getTasksByUser(USERNAME).then(data=>{
         if(data){
-            console.log(data)
             res.render('tasks',{
                 defaultLayout: true,
                 data: data,
@@ -99,17 +98,14 @@ app.get('/task/:userName', ensureLogin, (req,res)=>{
         }
     })
     .catch((err)=>{
-        console.log(err);
         res.render('tasks',{
             defaultLayout: true
         });
     })
 });
 app.post('/addTask', ensureLogin, (req, res)=>{
-    console.log(req.body)
     taskService.createTask(req.body, USERNAME).then((data)=>{
         res.redirect(`/task/${USERNAME}`);
-        console.log(data);
     })
     .catch((err)=>{
         res.status(401).json({

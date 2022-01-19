@@ -38,7 +38,6 @@ module.exports = {
                 initTime: task.InitTime,
                 endTime: task.EndTime
             }).then(()=>{
-                console.log(Task)
                 resolve(`${task.TaskName} added`);
             }).catch(()=>{
                 reject("unable to create task");
@@ -63,14 +62,12 @@ module.exports = {
     },
     deleteTask: (task)=>{
       return new Promise((resolve,  reject)=>{
-          console.log(task)
             sequelize.authenticate().then(()=>{
                 Task.destroy({
                     where: {taskName: task}
                 }).then(()=>{
                     resolve("task deleted")
                 }).catch((err)=>{
-                    console.log(err);
                     reject(err);
                 });
             });
